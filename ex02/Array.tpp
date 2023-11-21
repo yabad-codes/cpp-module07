@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:30:04 by yabad             #+#    #+#             */
-/*   Updated: 2023/11/13 19:00:37 by yabad            ###   ########.fr       */
+/*   Updated: 2023/11/21 10:37:28 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 template <typename T>
 Array<T>::Array() {
 	std::cout << "Default constructor called." << std::endl;
-	this->array = nullptr;
+	this->array = NULL;
 	this->length = 0;
 }
 
@@ -62,7 +62,7 @@ Array<T>&	Array<T>::operator=(const Array& other) {
 
 template <typename T>
 T&	Array<T>::operator[](unsigned int index) {
-	if (index < this->length) {
+	if (index < this->length && index >= 0) {
 		return this->array[index];
 	}
 	throw std::out_of_range("Index out of range");
